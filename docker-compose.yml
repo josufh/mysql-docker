@@ -13,5 +13,12 @@ services:
       - TZ=${TZ}
     ports:
       - ${DB_PORT}:3306
+    networks:
+      - backend-network
+
 volumes:
   db-volume:
+
+networks:
+  backend-network:
+    external: true
